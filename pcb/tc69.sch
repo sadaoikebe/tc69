@@ -433,25 +433,25 @@ F 3 "" H 6300 3300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ec_sw:EC_SW SW9
+L ec_sw:EC_SW SW4
 U 1 1 619757AB
-P 6250 4300
-F 0 "SW9" H 6283 4515 50  0000 C CNN
-F 1 "LSHFT" H 6283 4424 50  0000 C CNN
-F 2 "lib:ecs_pad" H 6250 4050 50  0001 C CNN
-F 3 "" H 6250 4050 50  0000 C CNN
-	1    6250 4300
+P 5950 4300
+F 0 "SW4" H 5983 4515 50  0000 C CNN
+F 1 "LSHFT" H 5983 4424 50  0000 C CNN
+F 2 "lib:ecs_pad" H 5950 4050 50  0001 C CNN
+F 3 "" H 5950 4050 50  0000 C CNN
+	1    5950 4300
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0120
 U 1 1 619757B1
-P 6300 4400
-F 0 "#PWR0120" H 6300 4150 50  0001 C CNN
-F 1 "GND" H 6305 4227 50  0001 C CNN
-F 2 "" H 6300 4400 50  0001 C CNN
-F 3 "" H 6300 4400 50  0001 C CNN
-	1    6300 4400
+P 6000 4400
+F 0 "#PWR0120" H 6000 4150 50  0001 C CNN
+F 1 "GND" H 6005 4227 50  0001 C CNN
+F 2 "" H 6000 4400 50  0001 C CNN
+F 3 "" H 6000 4400 50  0001 C CNN
+	1    6000 4400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -482,9 +482,6 @@ Connection ~ 6400 2650
 Wire Wire Line
 	6400 2650 6400 3200
 Connection ~ 6400 3200
-Connection ~ 6400 4300
-Wire Wire Line
-	6400 4300 6400 4850
 $Comp
 L ec_sw:EC_SW SW11
 U 1 1 61984183
@@ -1293,17 +1290,6 @@ F 3 "" H 8700 3300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ec_sw:EC_SW SW48
-U 1 1 619EA77A
-P 8650 3750
-F 0 "SW48" H 8683 3965 50  0000 C CNN
-F 1 "L" H 8683 3874 50  0000 C CNN
-F 2 "lib:ecs_pad" H 8650 3500 50  0001 C CNN
-F 3 "" H 8650 3500 50  0000 C CNN
-	1    8650 3750
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0159
 U 1 1 619EA780
 P 8700 3850
@@ -2073,13 +2059,8 @@ Connection ~ 8600 4000
 Wire Wire Line
 	8600 4000 8900 4000
 Connection ~ 8900 4000
-Wire Wire Line
-	8900 4000 9200 4000
 Connection ~ 9200 4000
 Connection ~ 9800 4000
-Connection ~ 6200 4550
-Wire Wire Line
-	6200 4550 6500 4550
 Connection ~ 6500 4550
 Wire Wire Line
 	6500 4550 6800 4550
@@ -2139,11 +2120,9 @@ Connection ~ 10100 5100
 Wire Wire Line
 	10100 5100 10400 5100
 Wire Wire Line
-	5750 4550 6200 4550
+	5750 4550 5900 4550
 Wire Wire Line
-	6100 3750 6100 4850
-Wire Wire Line
-	6400 3200 6400 3750
+	6100 3750 6100 4300
 Wire Wire Line
 	6200 5100 6800 5100
 Wire Wire Line
@@ -2783,21 +2762,8 @@ Wire Wire Line
 Wire Wire Line
 	2350 3500 1950 3500
 Connection ~ 2350 4700
-$Comp
-L ec_sw:EC_SW SW8
-U 1 1 61988E43
-P 6250 3750
-F 0 "SW8" H 6283 3965 50  0000 C CNN
-F 1 "A" H 6283 3874 50  0000 C CNN
-F 2 "lib:ecs_pad" H 6250 3500 50  0001 C CNN
-F 3 "" H 6250 3500 50  0000 C CNN
-	1    6250 3750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6700 3200 6700 3750
-Wire Wire Line
-	5900 4000 6200 4000
 $Comp
 L power:GND #PWR0186
 U 1 1 619947F9
@@ -2815,16 +2781,10 @@ Wire Wire Line
 Connection ~ 6700 3750
 Wire Wire Line
 	6700 3750 6700 4300
-Connection ~ 6200 4000
 Wire Wire Line
-	6200 4000 6500 4000
-Connection ~ 6400 3750
+	9200 4000 9500 4000
 Wire Wire Line
-	6400 3750 6400 4300
-Wire Wire Line
-	9200 4000 9800 4000
-Wire Wire Line
-	9700 3200 9700 4850
+	9700 3200 9700 3750
 $Comp
 L power:GND #PWR0104
 U 1 1 61957C8C
@@ -2889,4 +2849,50 @@ F 4 "C89851" H 3850 4800 50  0001 C CNN "LCSC"
 	1    3850 4800
 	1    0    0    -1  
 $EndComp
+Connection ~ 5900 4550
+Connection ~ 6100 4300
+Wire Wire Line
+	6100 4300 6100 4850
+Wire Wire Line
+	5900 4550 6500 4550
+$Comp
+L ec_sw:EC_SW SW8
+U 1 1 61988E43
+P 6250 3750
+F 0 "SW8" H 6283 3965 50  0000 C CNN
+F 1 "A" H 6283 3874 50  0000 C CNN
+F 2 "lib:ecs_pad" H 6250 3500 50  0001 C CNN
+F 3 "" H 6250 3500 50  0000 C CNN
+	1    6250 3750
+	1    0    0    -1  
+$EndComp
+Connection ~ 9500 4000
+Wire Wire Line
+	9500 4000 9800 4000
+Connection ~ 9700 3750
+Wire Wire Line
+	9700 3750 9700 4850
+Wire Wire Line
+	8900 4000 9200 4000
+$Comp
+L ec_sw:EC_SW SW48
+U 1 1 619EA77A
+P 8650 3750
+F 0 "SW48" H 8683 3965 50  0000 C CNN
+F 1 "L" H 8683 3874 50  0000 C CNN
+F 2 "lib:ecs_pad" H 8650 3500 50  0001 C CNN
+F 3 "" H 8650 3500 50  0000 C CNN
+	1    8650 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 3200 6400 3750
+Wire Wire Line
+	5900 4000 6200 4000
+Connection ~ 6200 4000
+Wire Wire Line
+	6200 4000 6500 4000
+Connection ~ 6400 3750
+Wire Wire Line
+	6400 3750 6400 4850
 $EndSCHEMATC

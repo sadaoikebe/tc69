@@ -45,21 +45,21 @@ void loop() {
         if (matrix_change & col_mask) {
           uint16_t keycode = keymap_base[r][c];
           bool pressed = matrix_row & col_mask;
-          if(pressed) {
-            // key pressed
-            Serial.print("P");
-            Serial.print(r);
-            Serial.print(" ");
-            Serial.print(c);
-            Serial.print(" ");
-          } else {
-            // key released
-            Serial.print("R");
-            Serial.print(r);
-            Serial.print(" ");
-            Serial.print(c);
-            Serial.print(" ");
-          }
+          // if(pressed) {
+          //   // key pressed
+          //   Serial.print("P");
+          //   Serial.print(r);
+          //   Serial.print(" ");
+          //   Serial.print(c);
+          //   Serial.print(" ");
+          // } else {
+          //   // key released
+          //   Serial.print("R");
+          //   Serial.print(r);
+          //   Serial.print(" ");
+          //   Serial.print(c);
+          //   Serial.print(" ");
+          // }
 
           if(keycode == 0) {
             fn_pressed = pressed;
@@ -74,7 +74,7 @@ void loop() {
             }
           }
           
-          Serial.println(keycode);
+          // Serial.println(keycode);
 
           if(keycode == KEY_NICOLA_ON) {
             if(pressed) {

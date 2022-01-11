@@ -1,7 +1,7 @@
 #include "nicola_keyboard.h"
 
 int calibration_count = 10;
-int adc_threshold = 400;
+int adc_threshold = 800;
 
 int adc_measured_val[MATRIX_COLS][MATRIX_ROWS];
 int calibration_val[MATRIX_COLS][MATRIX_ROWS];

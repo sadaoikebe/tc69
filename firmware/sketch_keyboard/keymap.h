@@ -20,12 +20,18 @@
 
 #define KEY_PRNT_SCRN 206
 #define KEY_PAUSE 212
-#define KEY_FN (0x101)
-#define KEY_HENKAN (0x102)
-#define KEY_MUHENKAN (0x103)
+
+#define KEY_CONVERT 274
+#define KEY_NOCONVERT 275
+#define KEY_LANG1 280
+#define KEY_LANG2 281
+
+#define KEY_FN (0x201)
+#define KEY_NICOLA_ON (0x202)
+#define KEY_NICOLA_OFF (0x203)
 
 typedef enum nicola_keycodes {
-  NG_TOP = (0x102),
+  NG_TOP = (0x204),
   NG_M_TOP = NG_TOP,
   NG_1 = NG_TOP,
   NG_2,
@@ -88,7 +94,7 @@ typedef enum nicola_keycodes {
 const uint16_t keymap_base[MATRIX_ROWS][MATRIX_COLS] = LAYOUT( \
     KEY_ESC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', KEY_BACKSPACE, KEY_HOME, \
     KEY_TAB, 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', KEY_PAGE_UP, \
-    KEY_CAPS_LOCK, 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', KEY_RETURN, KEY_PAGE_DOWN, \
+    KEY_LEFT_CTRL, 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', KEY_RETURN, KEY_PAGE_DOWN, \
     KEY_LEFT_SHIFT, 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', KEY_RIGHT_SHIFT, KEY_UP_ARROW, KEY_END, \
     0, KEY_LEFT_GUI, KEY_LEFT_ALT, ' ', ' ', KEY_RIGHT_ALT, KEY_RIGHT_GUI, 0, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW);
 
@@ -97,7 +103,7 @@ const uint16_t keymap_fn[MATRIX_ROWS][MATRIX_COLS] = LAYOUT( \
     1, 1, 1, 1, 1, 1, KEY_HOME, KEY_PAGE_DOWN, KEY_PAGE_UP, KEY_END, KEY_PRNT_SCRN, 1, KEY_PAUSE, 1, 1, \
     1, 1, 1, 1, 1, 1, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_INSERT, KEY_DELETE, 1, 1, \
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, \
-    0, 1, 1, KEY_MUHENKAN, KEY_HENKAN, 1, 1, 1, 1, 1, 1);
+    0, 1, 1, KEY_NICOLA_OFF, KEY_NICOLA_ON, 1, 1, 1, 1, 1, 1);
 
 const uint16_t keymap_nicola[MATRIX_ROWS][MATRIX_COLS] = LAYOUT( \
     1, NG_1, NG_2, NG_3, NG_4, NG_5, NG_6, NG_7, NG_8, NG_9, NG_0, NG_MINS, NG_EQL, 1, 1, \

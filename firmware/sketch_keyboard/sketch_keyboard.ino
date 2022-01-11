@@ -1,30 +1,4 @@
-const int PURGE = 9;
-const int SENSE = 10;
-const int ROWS[] = { 7, 8, 6, 5, 4 };
-const int COLS[] = { 3, 2, 1, 0 };
-
-int calibration_count = 10;
-int adc_threshold = 30;
-
-int adc_measured_val[16][5];
-int calibration_val[16][5];
-
-void acquire_adc() {
-  for(int j=0; j<16; ++j) {
-    digitalWrite(COLS[0], (j&1) ? HIGH : LOW);
-    digitalWrite(COLS[1], (j&2) ? HIGH : LOW);
-    digitalWrite(COLS[2], (j&4) ? HIGH : LOW);
-    digitalWrite(COLS[3], (j&8) ? HIGH : LOW);
-    for(int i=0; i<5; ++i) {
-      digitalWrite(ROWS[i], HIGH);
-      adc_measured_val[j][i] = analogRead(SENSE);
-      digitalWrite(ROWS[i], LOW);
-      pinMode(PURGE, OUTPUT);
-      digitalWrite(PURGE, LOW);
-      pinMode(PURGE, INPUT);
-    }
-  }
-}
+#include "nicola_keyboard.h"
 
 void setup() {
   Serial.begin(9600);
@@ -48,46 +22,40 @@ void setup() {
   pinMode(ROWS[3], OUTPUT);
   pinMode(ROWS[4], OUTPUT);
 
-  for(int j=0; j<16; ++j) {
-    for(int i=0; i<5; ++i) {
-      calibration_val[j][i] = 0;
-    }
-  }
-  
-  for(int i=0; i<calibration_count; ++i) {
-    acquire_adc();
-  }
-
-  for(int i=0; i<calibration_count; ++i) {
-    acquire_adc();
-    for(int j=0; j<16; ++j) {
-      for(int k=0; k<5; ++k) {
-        calibration_val[j][k] += adc_measured_val[j][k];
-      }
-    }
-  }
-
-  for(int j=0; j<16; ++j) {
-    for(int i=0; i<5; ++i) {
-      calibration_val[j][i] /= calibration_count;
-    }
-  }
-
+  debounce_init();
+  calibrate_adc();
 }
 
 
 void loop() {
-  acquire_adc();
+  static matrix_row_t matrix_prev[MATRIX_ROWS];
+  matrix_row_t        matrix_row    = 0;
+  matrix_row_t        matrix_change = 0;
 
-  for(int i=0; i<5; ++i) {
-    for(int j=0; j<16; ++j) {
-      //int v = adc_measured_val[j][i] - calibration_val[j][i] - adc_threshold;
-      //if(v<0) v=0;
-      int v = adc_measured_val[j][i];
-      Serial.print(v);
-      Serial.print(" ");
+  uint8_t matrix_changed = matrix_scan();
+
+  for (uint8_t r = 0; r < MATRIX_ROWS; r++) {
+    matrix_row    = matrix_get_row(r);
+    matrix_change = matrix_row ^ matrix_prev[r];
+    if (matrix_change) {
+      matrix_row_t col_mask = 1;
+      for (uint8_t c = 0; c < MATRIX_COLS; c++, col_mask <<= 1) {
+        if (matrix_change & col_mask) {
+          Serial.print(r);
+          Serial.print(' ');
+          Serial.print(c);
+          Serial.print(' ');
+          Serial.print(matrix_row & col_mask ? '1' : '0');
+          Serial.print(' ');
+          Serial.print(matrix_prev[r] & col_mask ? '1' : '0');
+          Serial.print(' ');
+          Serial.print(matrix_change & col_mask ? '1' : '0');
+          Serial.println(' ');
+
+          // record a processed key
+          matrix_prev[r] ^= col_mask;
+        }
+      }
     }
-    Serial.println();
   }
-  Serial.println();
 }

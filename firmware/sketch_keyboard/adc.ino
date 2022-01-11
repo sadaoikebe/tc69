@@ -12,6 +12,7 @@ void acquire_adc(int adc_measured_val[][5]) {
       adc_measured_val[j][i] += analogRead(SENSE);
       adc_measured_val[j][i] += analogRead(SENSE);
       adc_measured_val[j][i] += analogRead(SENSE);
+      adc_measured_val[j][i] += analogRead(SENSE);
       digitalWrite(ROWS[i], LOW);
       pinMode(PURGE, OUTPUT);
       digitalWrite(PURGE, LOW);

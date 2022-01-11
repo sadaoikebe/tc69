@@ -138,17 +138,6 @@ Connection ~ 4150 5500
 Wire Wire Line
 	4150 5500 4150 4800
 $Comp
-L power:+5V #PWR0108
-U 1 1 61964144
-P 1450 1900
-F 0 "#PWR0108" H 1450 1750 50  0001 C CNN
-F 1 "+5V" H 1465 2073 50  0000 C CNN
-F 2 "" H 1450 1900 50  0001 C CNN
-F 3 "" H 1450 1900 50  0001 C CNN
-	1    1450 1900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C_Small C1
 U 1 1 6196414A
 P 1700 2000
@@ -193,42 +182,8 @@ NoConn ~ 4400 900
 NoConn ~ 4550 900 
 NoConn ~ 4200 2650
 NoConn ~ 4400 2650
-$Comp
-L power:GND #PWR0110
-U 1 1 6198CF65
-P 5100 1500
-F 0 "#PWR0110" H 5100 1250 50  0001 C CNN
-F 1 "GND" V 5105 1372 50  0000 R CNN
-F 2 "" H 5100 1500 50  0001 C CNN
-F 3 "" H 5100 1500 50  0001 C CNN
-	1    5100 1500
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR0111
-U 1 1 6198D635
-P 5100 1350
-F 0 "#PWR0111" H 5100 1200 50  0001 C CNN
-F 1 "+5V" V 5115 1478 50  0000 L CNN
-F 2 "" H 5100 1350 50  0001 C CNN
-F 3 "" H 5100 1350 50  0001 C CNN
-	1    5100 1350
-	0    1    1    0   
-$EndComp
-NoConn ~ 5100 1650
-Text GLabel 5100 1950 2    50   Input ~ 0
+Text GLabel 3450 1800 0    50   Input ~ 0
 ADC
-$Comp
-L Seeeduino_XIAO:SeeeduinoXIAO U1
-U 1 1 61932DBD
-P 4300 1800
-F 0 "U1" H 4275 861 50  0000 C CNN
-F 1 "SeeeduinoXIAO" H 4275 770 50  0001 C CNN
-F 2 "Seeeduino XIAO KICAD:Seeeduino XIAO-MOUDLE14P-2.54-21X17.8MM" H 3950 2000 50  0001 C CNN
-F 3 "" H 3950 2000 50  0001 C CNN
-	1    4300 1800
-	1    0    0    -1  
-$EndComp
 Text GLabel 5100 2250 2    50   Input ~ 0
 row1
 Text GLabel 5100 2100 2    50   Input ~ 0
@@ -241,13 +196,13 @@ Text GLabel 3450 1950 0    50   Input ~ 0
 row5
 Text GLabel 3450 1350 0    50   Input ~ 0
 S0
-Text GLabel 3450 1800 0    50   Input ~ 0
+Text GLabel 5100 1800 2    50   Input ~ 0
 S1
-Text GLabel 3450 1650 0    50   Input ~ 0
+Text GLabel 5100 1950 2    50   Input ~ 0
 S2
 Text GLabel 3450 1500 0    50   Input ~ 0
 S3
-Text GLabel 5100 1800 2    50   Input ~ 0
+Text GLabel 3450 1650 0    50   Input ~ 0
 SENSE
 Text GLabel 950  6150 0    50   Input ~ 0
 col14
@@ -2586,17 +2541,6 @@ col2
 Text GLabel 950  4000 0    50   Input ~ 0
 col1
 $Comp
-L power:+5V #PWR0102
-U 1 1 6197F28E
-P 1450 5500
-F 0 "#PWR0102" H 1450 5350 50  0001 C CNN
-F 1 "+5V" H 1465 5673 50  0000 C CNN
-F 2 "" H 1450 5500 50  0001 C CNN
-F 3 "" H 1450 5500 50  0001 C CNN
-	1    1450 5500
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C_Small C6
 U 1 1 6197F294
 P 1700 5600
@@ -2636,17 +2580,6 @@ F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 1450 6650 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms-53bms.pdf" H 1450 6650 50  0001 C CNN
 F 4 "C9386" H 1450 6650 50  0001 C CNN "LCSC"
 	1    1450 6650
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR0198
-U 1 1 61A21E44
-P 1450 2950
-F 0 "#PWR0198" H 1450 2800 50  0001 C CNN
-F 1 "+5V" H 1465 3123 50  0000 C CNN
-F 2 "" H 1450 2950 50  0001 C CNN
-F 3 "" H 1450 2950 50  0001 C CNN
-	1    1450 2950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2781,10 +2714,6 @@ Wire Wire Line
 Connection ~ 6700 3750
 Wire Wire Line
 	6700 3750 6700 4300
-Wire Wire Line
-	9200 4000 9500 4000
-Wire Wire Line
-	9700 3200 9700 3750
 $Comp
 L power:GND #PWR0104
 U 1 1 61957C8C
@@ -2827,17 +2756,6 @@ F 4 "C49678" H 4000 4350 50  0001 C CNN "LCSC"
 	0    1    1    0   
 $EndComp
 $Comp
-L power:+5V #PWR0106
-U 1 1 6195DC54
-P 3750 4250
-F 0 "#PWR0106" H 3750 4100 50  0001 C CNN
-F 1 "+5V" H 3765 4423 50  0000 C CNN
-F 2 "" H 3750 4250 50  0001 C CNN
-F 3 "" H 3750 4250 50  0001 C CNN
-	1    3750 4250
-	1    0    0    -1  
-$EndComp
-$Comp
 L Amplifier_Operational:NCS20071SN U3
 U 1 1 619B1295
 P 3850 4800
@@ -2866,12 +2784,6 @@ F 3 "" H 6250 3500 50  0000 C CNN
 	1    6250 3750
 	1    0    0    -1  
 $EndComp
-Connection ~ 9500 4000
-Wire Wire Line
-	9500 4000 9800 4000
-Connection ~ 9700 3750
-Wire Wire Line
-	9700 3750 9700 4850
 Wire Wire Line
 	8900 4000 9200 4000
 $Comp
@@ -2895,4 +2807,86 @@ Wire Wire Line
 Connection ~ 6400 3750
 Wire Wire Line
 	6400 3750 6400 4850
+Wire Wire Line
+	9200 4000 9800 4000
+Wire Wire Line
+	9700 3200 9700 4850
+$Comp
+L Seeeduino_XIAO:SeeeduinoXIAO U1
+U 1 1 61932DBD
+P 4300 1800
+F 0 "U1" H 4275 861 50  0000 C CNN
+F 1 "SeeeduinoXIAO" H 4275 770 50  0001 C CNN
+F 2 "Seeeduino XIAO KICAD:Seeeduino XIAO-MOUDLE14P-2.54-21X17.8MM" H 3950 2000 50  0001 C CNN
+F 3 "" H 3950 2000 50  0001 C CNN
+	1    4300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 6198CF65
+P 5100 1500
+F 0 "#PWR0110" H 5100 1250 50  0001 C CNN
+F 1 "GND" V 5105 1372 50  0000 R CNN
+F 2 "" H 5100 1500 50  0001 C CNN
+F 3 "" H 5100 1500 50  0001 C CNN
+	1    5100 1500
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 5100 1350
+$Comp
+L power:+3.3V #PWR?
+U 1 1 61DFCB61
+P 5100 1650
+F 0 "#PWR?" H 5100 1500 50  0001 C CNN
+F 1 "+3.3V" V 5115 1778 50  0000 L CNN
+F 2 "" H 5100 1650 50  0001 C CNN
+F 3 "" H 5100 1650 50  0001 C CNN
+	1    5100 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 61DFE6EA
+P 1450 1900
+F 0 "#PWR?" H 1450 1750 50  0001 C CNN
+F 1 "+3.3V" H 1465 2073 50  0000 C CNN
+F 2 "" H 1450 1900 50  0001 C CNN
+F 3 "" H 1450 1900 50  0001 C CNN
+	1    1450 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 61DFF73E
+P 1450 2950
+F 0 "#PWR?" H 1450 2800 50  0001 C CNN
+F 1 "+3.3V" H 1465 3123 50  0000 C CNN
+F 2 "" H 1450 2950 50  0001 C CNN
+F 3 "" H 1450 2950 50  0001 C CNN
+	1    1450 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 61E00904
+P 1450 5500
+F 0 "#PWR?" H 1450 5350 50  0001 C CNN
+F 1 "+3.3V" H 1465 5673 50  0000 C CNN
+F 2 "" H 1450 5500 50  0001 C CNN
+F 3 "" H 1450 5500 50  0001 C CNN
+	1    1450 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 61E018BB
+P 3750 4250
+F 0 "#PWR?" H 3750 4100 50  0001 C CNN
+F 1 "+3.3V" H 3765 4423 50  0000 C CNN
+F 2 "" H 3750 4250 50  0001 C CNN
+F 3 "" H 3750 4250 50  0001 C CNN
+	1    3750 4250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

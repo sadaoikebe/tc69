@@ -18,15 +18,15 @@
     {   0,   K41,     0,     0,   K44,   K45,     0,   K47,   K48,   K49,   K4A,   K4B,   K4C,  K4D,  K4E,    0 }, \
 }
 
+#define KEY_APP 201
 #define KEY_PRNT_SCRN 206
-#define KEY_PAUSE 212
+#define KEY_PAUSE 208
 
 #define KEY_CONVERT 274
 #define KEY_NOCONVERT 275
 #define KEY_LANG1 280
 #define KEY_LANG2 281
 
-#define KEY_FN (0x201)
 #define KEY_NICOLA_ON (0x202)
 #define KEY_NICOLA_OFF (0x203)
 
@@ -96,7 +96,7 @@ const uint16_t keymap_base[MATRIX_ROWS][MATRIX_COLS] = LAYOUT( \
     KEY_TAB, 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', KEY_PAGE_UP, \
     KEY_LEFT_CTRL, 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', KEY_RETURN, KEY_PAGE_DOWN, \
     KEY_LEFT_SHIFT, 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', KEY_RIGHT_SHIFT, KEY_UP_ARROW, KEY_END, \
-    0, KEY_LEFT_GUI, KEY_LEFT_ALT, ' ', ' ', KEY_RIGHT_ALT, KEY_RIGHT_GUI, 0, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW);
+    0, KEY_LEFT_GUI, KEY_LEFT_ALT, ' ', ' ', KEY_RIGHT_ALT, KEY_RIGHT_GUI, KEY_APP, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW);
 
 const uint16_t keymap_fn[MATRIX_ROWS][MATRIX_COLS] = LAYOUT( \
     '`', KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_F11, KEY_F12, KEY_DELETE, 1, \

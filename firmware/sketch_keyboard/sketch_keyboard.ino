@@ -45,6 +45,22 @@ void loop() {
         if (matrix_change & col_mask) {
           uint16_t keycode = keymap_base[r][c];
           bool pressed = matrix_row & col_mask;
+          if(pressed) {
+            // key pressed
+            Serial.print("P");
+            Serial.print(r);
+            Serial.print(" ");
+            Serial.print(c);
+            Serial.print(" ");
+          } else {
+            // key released
+            Serial.print("R");
+            Serial.print(r);
+            Serial.print(" ");
+            Serial.print(c);
+            Serial.print(" ");
+          }
+
           if(keycode == 0) {
             fn_pressed = pressed;
           }
@@ -52,33 +68,45 @@ void loop() {
             if(keymap_fn[r][c] > 1) {
               keycode = keymap_fn[r][c];
             }
+          } else if(nicola_layer_state()) {
+            if(keymap_nicola[r][c] > 1) {
+              keycode = keymap_nicola[r][c];
+            }
+          }
+          
+          Serial.println(keycode);
+
+          if(keycode == KEY_NICOLA_ON) {
+            if(pressed) {
+              nicola_on();
+            }
+            matrix_prev[r] ^= col_mask;
+            continue;
+          } else if(keycode == KEY_NICOLA_OFF) {
+            if(pressed) {
+              nicola_off();
+            }
+            matrix_prev[r] ^= col_mask;
+            continue;
+          }
+          if(nicola_state()) {
+            nicola_mode(keycode, pressed);
+            if(!process_nicola(keycode, pressed)) {
+              matrix_prev[r] ^= col_mask;
+              continue;
+            }
           }
           if(keycode > 1 && keycode <= 0xff) {
             if(pressed) {
-              // key pressed
-              Serial.print("P");
-              Serial.print(r);
-              Serial.print(" ");
-              Serial.print(c);
-              Serial.print(" ");
-              Serial.println(keycode);
               Keyboard.press(keycode);
             } else {
-              // key released
-              Serial.print("R");
-              Serial.print(r);
-              Serial.print(" ");
-              Serial.print(c);
-              Serial.print(" ");
-              Serial.println(keycode);
               Keyboard.release(keycode);
             }
           }
-
-          // record a processed key
           matrix_prev[r] ^= col_mask;
         }
       }
     }
   }
 }
+

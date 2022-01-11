@@ -25,4 +25,13 @@ void acquire_adc(int adc_measured_val[][5]);
 uint8_t matrix_scan(void);
 matrix_row_t matrix_get_row(uint8_t row);
 
+// nicola.ino
+void nicola_on(void);
+void nicola_off(void);
+bool nicola_state(void);
+bool nicola_layer_state(void);
+void nicola_clear(void);
+void nicola_mode(uint16_t keycode, bool pressed);
+bool process_nicola(uint16_t keycode, bool pressed);
+
 #endif

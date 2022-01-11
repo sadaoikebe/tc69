@@ -24,7 +24,7 @@ When no state changes have occured for DEBOUNCE milliseconds, we push the state.
 #include "nicola_keyboard.h"
 
 #ifndef DEBOUNCE
-#    define DEBOUNCE 5
+#    define DEBOUNCE 16
 #endif
 
 // Maximum debounce: 127ms

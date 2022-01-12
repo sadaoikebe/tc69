@@ -21,7 +21,6 @@
 #include "keymap.h"
 
 static bool is_nicola = false; // 親指シフトがオンかオフか
-static bool is_nicola_layer = false;
 static uint8_t n_modifier = 0; // 押しているmodifierキーの数
 
 #define TIMEOUT_THRESHOLD (150)
@@ -46,22 +45,22 @@ static uint16_t nicola_o_time;
 // 親指シフトをオンオフ
 void nicola_on(void) {
   is_nicola = true;
-  is_nicola_layer = true;
   nicola_clear();
 
   Keyboard.press(KEY_CONVERT);
   Keyboard.press(KEY_LANG1);
+  delayMicroseconds(10);
   Keyboard.release(KEY_CONVERT);
   Keyboard.release(KEY_LANG1);
 }
 
 void nicola_off(void) {
   is_nicola = false;
-  is_nicola_layer = false;
   nicola_clear();
 
   Keyboard.press(KEY_NOCONVERT);
   Keyboard.press(KEY_LANG2);
+  delayMicroseconds(10);
   Keyboard.release(KEY_NOCONVERT);
   Keyboard.release(KEY_LANG2);
 }
@@ -71,19 +70,14 @@ bool nicola_state(void) {
   return is_nicola;
 }
 
-// 親指シフトの状態
-bool nicola_layer_state(void) {
-  return is_nicola_layer;
-}
-
 // バッファをクリアする
 void nicola_clear(void) {
   nicola_int_state = NICOLA_STATE_S1_INIT;
 }
 
 // 入力モードか編集モードかを確認する
-void nicola_mode(uint16_t keycode, bool pressed) {
-  if (!is_nicola) return;
+bool is_nicola_layer(uint16_t keycode, bool pressed) {
+  if (!is_nicola) return false;
 
   // modifierが押されたらレイヤーをオフ
   switch (keycode) {
@@ -97,18 +91,19 @@ void nicola_mode(uint16_t keycode, bool pressed) {
     case KEY_RIGHT_GUI:
       if (pressed) {
         if(n_modifier == 0) {
-          is_nicola_layer = false;
+          return false;
         }
         n_modifier++;
       } else {
         n_modifier--;
         if (n_modifier == 0) {
-          is_nicola_layer = true;
+          return true;
         }
       }
       break;
   }
 
+  return true;
 }
 
 void nicola_m_type(void) {

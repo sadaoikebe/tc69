@@ -44,37 +44,17 @@ void loop() {
         if (matrix_change & col_mask) {
           uint16_t keycode = keymap_base[r][c];
           bool pressed = matrix_row & col_mask;
-          // if(pressed) {
-          //   // key pressed
-          //   Serial.print("P");
-          //   Serial.print(r);
-          //   Serial.print(" ");
-          //   Serial.print(c);
-          //   Serial.print(" ");
-          // } else {
-          //   // key released
-          //   Serial.print("R");
-          //   Serial.print(r);
-          //   Serial.print(" ");
-          //   Serial.print(c);
-          //   Serial.print(" ");
-          // }
 
           if(keycode == 0) {
             fn_pressed = pressed;
           }
-          if(fn_pressed) {
-            if(keymap_fn[r][c] > 1) {
-              keycode = keymap_fn[r][c];
-            }
-          } else if(nicola_layer_state()) {
-            if(keymap_nicola[r][c] > 1) {
-              keycode = keymap_nicola[r][c];
-            }
+          if(fn_pressed && keymap_fn[r][c] > 1) {
+            keycode = keymap_fn[r][c];
+          }
+          else if(is_nicola_layer(keycode, pressed) && keymap_nicola[r][c] > 1) {
+            keycode = keymap_nicola[r][c];
           }
           
-          // Serial.println(keycode);
-
           if(keycode == KEY_NICOLA_ON) {
             if(pressed) {
               nicola_on();
@@ -89,7 +69,6 @@ void loop() {
             continue;
           }
           if(nicola_state()) {
-            nicola_mode(keycode, pressed);
             if(!process_nicola(keycode, pressed)) {
               matrix_prev[r] ^= col_mask;
               continue;

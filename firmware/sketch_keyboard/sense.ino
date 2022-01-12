@@ -22,7 +22,7 @@ void acquire_adc(int adc_measured_val[][5]) {
       digitalWrite(ROWS[i], LOW);
       pinMode(PURGE, OUTPUT);
       digitalWrite(PURGE, LOW);
-      delayMicroseconds(10);
+      delayMicroseconds(4);
       pinMode(PURGE, INPUT);
     }
   }

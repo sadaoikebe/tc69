@@ -1,8 +1,8 @@
-#include "nicola_keyboard.h"
+#include "sketch_keyboard.h"
 #include "keymap.h"
 
 void setup() {
-  Serial.begin(9600);
+  //Serial.begin(9600);
 
   // multiplexer
   pinMode(COLS[0], OUTPUT);
@@ -22,8 +22,7 @@ void setup() {
   pinMode(ROWS[2], OUTPUT);
   pinMode(ROWS[3], OUTPUT);
   pinMode(ROWS[4], OUTPUT);
-
-  debounce_init();
+  
   calibrate_adc();
 }
 
@@ -109,4 +108,3 @@ void loop() {
     }
   }
 }
-

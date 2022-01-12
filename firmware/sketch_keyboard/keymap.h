@@ -2,7 +2,7 @@
 #define __KEYMAP_H__
 
 #include <Keyboard.h>
-#include "nicola_keyboard.h"
+#include "sketch_keyboard.h"
 
 #define LAYOUT( \
       K05,   K07,   K06,   K04,   K02,   K01,   K00,   K03,   K0D,   K0F,   K0E,   K0C,   K0A,  K09,        K0B, \

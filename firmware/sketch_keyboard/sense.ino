@@ -1,9 +1,9 @@
 #include "sketch_keyboard.h"
 
-#define ADC_RING_BUFFER_SIZE 16 
+#define ADC_RING_BUFFER_SIZE 3
 
-const int adc_press_threshold = 160 * ADC_RING_BUFFER_SIZE;
-const int adc_release_threshold = 80 * ADC_RING_BUFFER_SIZE;
+const int adc_press_threshold = 120 * ADC_RING_BUFFER_SIZE;
+const int adc_release_threshold = 60 * ADC_RING_BUFFER_SIZE;
 static int adc_ring_index = 0;
 
 int adc_ring_buffer[ADC_RING_BUFFER_SIZE][MATRIX_COLS][MATRIX_ROWS];
@@ -22,7 +22,7 @@ void acquire_adc(int adc_measured_val[][5]) {
       digitalWrite(ROWS[i], LOW);
       pinMode(PURGE, OUTPUT);
       digitalWrite(PURGE, LOW);
-      delayMicroseconds(4);
+      delayMicroseconds(6);
       pinMode(PURGE, INPUT);
     }
   }
@@ -60,6 +60,16 @@ uint8_t matrix_scan(void) {
     matrix_row_t curr_matrix[5] = {0, 0, 0, 0, 0};
     acquire_adc(adc_ring_buffer[adc_ring_index]);
     adc_ring_index = (adc_ring_index + 1) % ADC_RING_BUFFER_SIZE;
+
+    Serial.print("ADC: ");
+    for(int i=0; i<16; ++i) {
+      for(int j=0; j<5; ++j) {
+        Serial.print(adc_ring_buffer[adc_ring_index][i][j]);
+        Serial.print(' ');
+      }
+      Serial.println();
+    }
+    Serial.println();
 
     for(int i=0; i<MATRIX_COLS; ++i) {
       for(int j=0; j<MATRIX_ROWS; ++j) {

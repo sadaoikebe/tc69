@@ -55,6 +55,14 @@ void loop() {
             keycode = keymap_nicola[r][c];
           }
           
+          //Serial.print(pressed ? "P" : "R");
+          //Serial.print(' ');
+          //Serial.print(keycode);
+          //Serial.print(' ');
+          //Serial.print(r);
+          //Serial.print(' ');
+          //Serial.println(c);
+          
           if(keycode == KEY_NICOLA_ON) {
             if(pressed) {
               nicola_on();

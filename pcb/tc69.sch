@@ -112,29 +112,8 @@ Wire Wire Line
 Connection ~ 3550 5500
 Wire Wire Line
 	3550 4900 3550 5500
-$Comp
-L Device:C_Small C3
-U 1 1 6195BD4C
-P 3850 5850
-F 0 "C3" V 3621 5850 50  0000 C CNN
-F 1 "10p" V 3712 5850 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" H 3850 5850 50  0001 C CNN
-F 3 "~" H 3850 5850 50  0001 C CNN
-F 4 "C157608" H 3850 5850 50  0001 C CNN "LCSC"
-	1    3850 5850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3550 5500 3550 5850
-Wire Wire Line
-	3550 5850 3750 5850
-Wire Wire Line
-	3950 5850 4150 5850
-Wire Wire Line
-	4150 5850 4150 5500
 Wire Wire Line
 	3950 5500 4150 5500
-Connection ~ 4150 5500
 Wire Wire Line
 	4150 5500 4150 4800
 $Comp

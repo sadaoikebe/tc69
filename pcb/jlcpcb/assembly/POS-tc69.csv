@@ -1,0 +1,27 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,100n,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,167.282953,-27.979711,180.0,bottom
+C2,330p,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,133.945425,-31.551589,-90.0,bottom
+C4,100n,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,127.992295,-26.384398,-90.0,bottom
+C5,100n,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,72.223499,-37.504719,0.0,bottom
+C6,100n,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,224.623627,-36.909406,0.0,bottom
+R1,1k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,122.229791,-28.575024,180.0,bottom
+R2,43k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,123.229791,-32.146902,90.0,bottom
+R3,100,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,131.564173,-31.551589,90.0,bottom
+R4,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,48.220353,-34.210967,-90.0,bottom
+R5,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,53.57817,-34.80628,-90.0,bottom
+R6,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,58.935987,-35.401593,-90.0,bottom
+R7,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,64.293804,-35.996906,-90.0,bottom
+R8,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,77.39069,-35.996906,-90.0,bottom
+R9,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,82.748507,-35.401593,-90.0,bottom
+R10,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,88.106324,-34.80628,-90.0,bottom
+R11,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,93.464141,-34.210967,-90.0,bottom
+R12,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,200.620481,-34.210967,-90.0,bottom
+R13,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,205.978298,-34.80628,-90.0,bottom
+R14,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,211.336115,-35.401593,-90.0,bottom
+R15,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,216.693932,-35.996906,-90.0,bottom
+R16,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,229.790818,-35.996906,-90.0,bottom
+R17,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,235.148635,-35.401593,-90.0,bottom
+R18,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,240.506452,-34.80628,-90.0,bottom
+R19,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,245.864269,-34.210967,-90.0,bottom
+U4,4051,SOIC-16_3.9x9.9mm_P1.27mm,70.842247,-30.956276,270.0,bottom
+U5,4051,SOIC-16_3.9x9.9mm_P1.27mm,223.242375,-30.360963,270.0,bottom

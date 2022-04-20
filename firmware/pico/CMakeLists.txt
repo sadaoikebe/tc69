@@ -26,6 +26,7 @@ add_executable(tc69
 target_link_libraries(tc69 pico_stdlib tinyusb_device tinyusb_board)
 include_directories(tc69 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${PICO_SDK_PATH})
 
+
 pico_set_program_name(tc69 "tc69 keyboard") # as "foo" would be the default
 pico_set_program_description(tc69 "TC69 NICOLA oyayubi shift")
 pico_set_program_version(tc69 "0.1")

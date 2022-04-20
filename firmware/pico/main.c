@@ -13,6 +13,7 @@ enum
 
 
 void hid_task(void);
+void loop(void);
 
 int main(void)
 {
@@ -24,6 +25,8 @@ int main(void)
     tud_task(); // tinyusb device task
 
     hid_task();
+
+    loop();
   }
 
   return 0;
@@ -186,8 +189,11 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
   (void) instance;
   (void) report_id;
   (void) report_type;
-  (void) buffer;
-  (void) reqlen;
+  // (void) buffer;
+  // (void) reqlen;
+
+  tud_hid_report(0, buffer, reqlen);
+
 
   return 0;
 }
@@ -217,4 +223,7 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
       }
     }
   }
+}
+
+void loop(void) {
 }

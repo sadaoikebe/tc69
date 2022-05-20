@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.762
         }
       },
       "diff_pair_dimensions": [],
@@ -411,10 +411,7 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Power",
-        "nets": [
-          "+3V3",
-          "GND"
-        ],
+        "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5,

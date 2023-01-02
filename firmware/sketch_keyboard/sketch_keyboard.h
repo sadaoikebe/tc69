@@ -8,10 +8,15 @@ typedef unsigned short matrix_row_t;
 const int MATRIX_ROWS = 5;
 const int MATRIX_COLS = 16;
 
-const int ROWS[] = { 2, 4, 1, 0, 7 };
-const int COLS[] = { 3, 6, 27, 26 };
-const int PURGE = 28;
-const int SENSE = 29;
+//const int ROWS[] = { 2, 4, 1, 0, 7 };
+//const int COLS[] = { 3, 6, 27, 26 };
+//const int PURGE = 28;
+//const int SENSE = 29;
+// samd21
+const int PURGE = 2;
+const int SENSE = 3;
+const int ROWS[] = { 8, 9, 7, 6, 5 };
+const int COLS[] = { 10, 4, 1, 0 };
 
 // sense.in
 void calibrate_adc(void);

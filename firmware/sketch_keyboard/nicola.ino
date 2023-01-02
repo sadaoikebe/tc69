@@ -48,9 +48,11 @@ void nicola_on(void) {
   nicola_clear();
 
   Keyboard.press(KEY_CONVERT);
-  Keyboard.press(KEY_LANG1);
-  delayMicroseconds(10);
+  delayMicroseconds(5);
   Keyboard.release(KEY_CONVERT);
+  delayMicroseconds(5);
+  Keyboard.press(KEY_LANG1);
+  delayMicroseconds(5);
   Keyboard.release(KEY_LANG1);
 }
 
@@ -59,9 +61,11 @@ void nicola_off(void) {
   nicola_clear();
 
   Keyboard.press(KEY_NOCONVERT);
-  Keyboard.press(KEY_LANG2);
-  delayMicroseconds(10);
+  delayMicroseconds(5);
   Keyboard.release(KEY_NOCONVERT);
+  delayMicroseconds(5);
+  Keyboard.press(KEY_LANG2);
+  delayMicroseconds(5);
   Keyboard.release(KEY_LANG2);
 }
 

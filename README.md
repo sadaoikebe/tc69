@@ -34,7 +34,7 @@ Item |ソース | 数量 |  備考
 :--- | :--- | :--- | :---
 TC69 PCBA | [JLCPCB PCBA](pcb/) | 1 |
 オペアンプ AD8601ARTZ | AliEx/淘宝等 | 1 |
-アナログMUX 74AHC1G04 | AliEx/淘宝等 | 1 |
+ロジック 74AHC1G04 | AliEx/淘宝等 | 1 |
 ケース | [3D Printed](case/) | 1 | 
 定位板 | [Laser Cut Brass](plate/) | 1 | t=1.5mm アクリルでも良いが割れやすい
 ヒートセット M3x6mmx4.6mm | [AliEx/淘宝等](https://www.aliexpress.com/item/1005002288716120.html) | 8 | 長さは6mmでなくても良い
@@ -52,7 +52,7 @@ NiZ プランジャーキット | [NiZ](https://www.nizkeyboard.com/products/201
 ## 組み立て工程
 
 1. 定位板はあらかじめM2タップを切る
-2. PCBにXiao RP2040, オペアンプ, MUX を取り付け
+2. PCBにXiao RP2040, オペアンプ, ロジックIC を取り付け
 3. コニカルスプリングを並べてラバードームを乗せる
 4. 定位板にハウジングを取り付け、プランジャーを通す
 5. 定位板とPCBをM2*8ボルトで緊結する
